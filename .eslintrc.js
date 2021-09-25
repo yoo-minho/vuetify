@@ -1,11 +1,8 @@
 module.exports = {
-  extends: [
-    'plugin:vue/recommended'
-  ],
-  plugins: [
-    'vuetify'
-  ],
+  extends: ["plugin:vue/recommended"],
+  plugins: ["vuetify"],
   rules: {
-    'vuetify/no-deprecated-classes': 'error'
+    "vuetify/no-deprecated-classes": "error",
+    "vuetify/no-legacy-grid": "error"
   }
-}
+};
