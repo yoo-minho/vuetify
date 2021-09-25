@@ -62,6 +62,10 @@
         <router-view />
       </v-container>
     </v-main>
+
+    <v-footer app>
+      가즈아
+    </v-footer>
   </v-app>
 </template>
 
@@ -75,6 +79,8 @@ export default {
     items: [
       { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/' },
       { title: 'Grid-System', icon: 'mdi-image', to: '/grid-system' },
+      { title: 'Grid-List-Page', icon: 'mdi-image', to: '/grid-list-page' },
+      { title: 'Break-Points', icon: 'mdi-image', to: '/break-points' },
     ],
     right: null,
   }),
