@@ -21,8 +21,16 @@
 
     <v-navigation-drawer
       v-model="drawer"
+      dark
       app
+      :src="require('@/assets/trees-6556336_1920.jpg')"
     >
+      <template v-slot:img="props">
+        <v-img
+          :gradient="gradient"
+          v-bind="props"
+        />
+      </template>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
@@ -45,6 +53,8 @@
           :key="item.title"
           link
           :to="item.to"
+          active-class="primary"
+          class="py-1"
         >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
@@ -75,12 +85,14 @@ export default {
   name: 'App',
 
   data: () => ({
+    gradient: 'rgba(0,0,0,.7), rgba(0,0,0,.7)',
     drawer: false,
     items: [
       { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/' },
       { title: 'Grid-System', icon: 'mdi-image', to: '/grid-system' },
       { title: 'Grid-List-Page', icon: 'mdi-image', to: '/grid-list-page' },
       { title: 'Break-Points', icon: 'mdi-image', to: '/break-points' },
+      { title: 'typo', icon: 'mdi-image', to: '/typo' },
     ],
     right: null,
   }),
