@@ -1,9 +1,13 @@
 <template>
-  <v-container
-    fluid
-  >
+  <v-container>
     <v-card class="pa-3">
-      Col2
+      <v-icon>mdi-ab-testing</v-icon>
+      <v-icon
+        x-large
+        color="secondary"
+      >
+        mdi-ab-testing
+      </v-icon>
     </v-card>
   </v-container>
 </template>
