@@ -9,8 +9,8 @@ import Tables from "@/views/Tables";
 import Forms from "@/views/Forms";
 import Buttons from "@/views/Buttons";
 import Icons from "@/views/Icons";
-import SignIn from "@/views/authentication/SignIn";
-import SignUp from "@/views/authentication/SignUp";
+// import SignIn from "@/views/authentication/SignIn";
+// import SignUp from "@/views/authentication/SignUp";
 import ProductList from "@/views/page/ProductList";
 
 import DefaultLayout from "@/layouts/default/index";
@@ -27,12 +27,18 @@ const routes = [
       {
         path: "sign-in",
         name: "SignIn",
-        component: SignIn
+        component: () =>
+          import(
+            /* webpackChunkName : "views-authentication" */ "@/views/authentication/SignIn"
+          )
       },
       {
         path: "sign-up",
         name: "SignUp",
-        component: SignUp
+        component: () =>
+          import(
+            /* webpackChunkName : "views-authentication" */ "@/views/authentication/SignUp"
+          )
       }
     ]
   },
