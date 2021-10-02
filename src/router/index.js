@@ -9,9 +9,6 @@ import Tables from "@/views/Tables";
 import Forms from "@/views/Forms";
 import Buttons from "@/views/Buttons";
 import Icons from "@/views/Icons";
-// import SignIn from "@/views/authentication/SignIn";
-// import SignUp from "@/views/authentication/SignUp";
-import ProductList from "@/views/page/ProductList";
 
 import DefaultLayout from "@/layouts/default/index";
 import PageLayout from "@/layouts/page/index";
@@ -29,7 +26,7 @@ const routes = [
         name: "SignIn",
         component: () =>
           import(
-            /* webpackChunkName : "views-authentication" */ "@/views/authentication/SignIn"
+            /* webpackChunkName: "views-authentication" */ "@/views/authentication/SignIn"
           )
       },
       {
@@ -37,7 +34,7 @@ const routes = [
         name: "SignUp",
         component: () =>
           import(
-            /* webpackChunkName : "views-authentication" */ "@/views/authentication/SignUp"
+            /* webpackChunkName: "views-authentication" */ "@/views/authentication/SignUp"
           )
       }
     ]
@@ -49,7 +46,10 @@ const routes = [
       {
         path: "product-list",
         name: "ProductList",
-        component: ProductList
+        component: () =>
+          import(
+            /* webpackChunkName: "views-page" */ "@/views/page/ProductList"
+          )
       }
     ]
   },
