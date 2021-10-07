@@ -1,32 +1,22 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Dashboard from "@/views/Dashboard";
-import GridSystem from "@/views/GridSystem";
-import GridListPage from "@/views/GridListPage";
-import BreakPoints from "@/views/BreakPoints";
-import Typography from "@/views/Typography";
-import Tables from "@/views/Tables";
-import Forms from "@/views/Forms";
-import Buttons from "@/views/Buttons";
-import Icons from "@/views/Icons";
-
-import DefaultLayout from "@/layouts/default/index";
-import PageLayout from "@/layouts/page/index";
-import AuthenticationLayout from "@/layouts/authentication/index";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/authentication",
-    component: AuthenticationLayout,
+    component: () =>
+      import(
+        /* webpackChunkName: "views-authentication-index" */ "@/layouts/authentication/index"
+      ),
     children: [
       {
         path: "sign-in",
         name: "SignIn",
         component: () =>
           import(
-            /* webpackChunkName: "views-authentication" */ "@/views/authentication/SignIn"
+            /* webpackChunkName: "views-sign-in" */ "@/views/authentication/SignIn"
           )
       },
       {
@@ -34,77 +24,99 @@ const routes = [
         name: "SignUp",
         component: () =>
           import(
-            /* webpackChunkName: "views-authentication" */ "@/views/authentication/SignUp"
+            /* webpackChunkName: "views-sign-up" */ "@/views/authentication/SignUp"
           )
       }
     ]
   },
   {
     path: "/page",
-    component: PageLayout,
+    component: () =>
+      import(
+        /* webpackChunkName: "layouts-page-index" */ "@/layouts/page/index"
+      ),
     children: [
       {
         path: "product-list",
         name: "ProductList",
         component: () =>
           import(
-            /* webpackChunkName: "views-page" */ "@/views/page/ProductList"
+            /* webpackChunkName: "views-products-list" */ "@/views/page/ProductList"
           )
       }
     ]
   },
   {
     path: "/",
-    component: DefaultLayout,
+    component: () =>
+      import(
+        /* webpackChunkName: "views-default-index" */ "@/layouts/default/index"
+      ),
     children: [
       {
         path: "/",
         name: "Dashboard",
-        component: Dashboard
+        component: () =>
+          import(/* webpackChunkName: "views-dashboard" */ "@/views/Dashboard")
       },
       {
         path: "/grid-system",
         name: "GridSystem",
-        component: GridSystem
+        component: () =>
+          import(
+            /* webpackChunkName: "views-grid-system" */ "@/views/GridSystem"
+          )
       },
       {
         path: "/grid-list-page",
         name: "GridListPage",
-        component: GridListPage
+        component: () =>
+          import(
+            /* webpackChunkName: "views-grid-list-page" */ "@/views/GridListPage"
+          )
       },
       {
         path: "/break-points",
         name: "BreakPoints",
-        component: BreakPoints
+        component: () =>
+          import(
+            /* webpackChunkName: "views-break-points" */ "@/views/BreakPoints"
+          )
       },
       {
         path: "/typo",
         name: "Typo",
-        component: Typography
+        component: () =>
+          import(/* webpackChunkName: "views-typo" */ "@/views/Typography")
       },
       {
         path: "/tables",
         name: "Tables",
-        component: Tables
+        component: () =>
+          import(/* webpackChunkName: "views-tables" */ "@/views/Tables")
       },
       {
         path: "/forms",
         name: "Forms",
-        component: Forms
+        component: () =>
+          import(/* webpackChunkName: "views-forms" */ "@/views/Forms")
       },
       {
         path: "/buttons",
         name: "Buttons",
-        component: Buttons
+        component: () =>
+          import(/* webpackChunkName: "views-buttons" */ "@/views/Buttons")
       },
       {
         path: "/icons",
         name: "Icons",
-        component: Icons
+        component: () =>
+          import(/* webpackChunkName: "views-icons" */ "@/views/Icons")
       }
     ]
   }
 ];
+
 const router = new VueRouter({
   mode: "history",
   routes

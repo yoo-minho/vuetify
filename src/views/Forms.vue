@@ -103,14 +103,8 @@
   </v-container>
 </template>
 <script>
-
-
 export default {
   name: 'Forms',
-  components: {
-    ValidationObserver,
-    ValidationProvider
-  },
   data: () => ({
     name: null,
     phoneNumber: null,
