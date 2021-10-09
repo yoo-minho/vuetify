@@ -48,7 +48,12 @@ export default {
       {title: 'Grid-List-Page', icon: 'mdi-image', to: '/grid-list-page'},
       {title: 'Break-Points', icon: 'mdi-image', to: '/break-points'},
       {title: 'typo', icon: 'mdi-image', to: '/typo'},
-      {title: 'Tables', icon: 'mdi-table-settings', to: '/tables'},
+      {
+        title: 'Tables', icon: 'mdi-table-settings', items: [
+          {title: 'Basic Table', icon: 'mdi-login', to: '/tables/basic-tables'},
+          {title: 'App Table', icon: 'mdi-logout', to: '/tables/app-tables'},
+        ]
+      },
       {title: 'Buttons', icon: 'mdi-gesture-tap-button', to: '/buttons'},
       {title: 'Icons', icon: 'mdi-emoticon-excited-outline', to: '/icons'},
     ],

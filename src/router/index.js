@@ -90,10 +90,20 @@ const routes = [
           import(/* webpackChunkName: "views-typo" */ "@/views/Typography")
       },
       {
-        path: "/tables",
-        name: "Tables",
+        path: "/tables/basic-tables",
+        name: "BasicTables",
         component: () =>
-          import(/* webpackChunkName: "views-tables" */ "@/views/Tables")
+          import(
+            /* webpackChunkName: "views-basic-tables" */ "@/views/tables/BasicTables"
+          )
+      },
+      {
+        path: "/tables/app-tables",
+        name: "AppTables",
+        component: () =>
+          import(
+            /* webpackChunkName: "views-app-tables" */ "@/views/tables/AppTables"
+          )
       },
       {
         path: "/forms/validation-form",
