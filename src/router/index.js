@@ -96,10 +96,20 @@ const routes = [
           import(/* webpackChunkName: "views-tables" */ "@/views/Tables")
       },
       {
-        path: "/forms",
-        name: "Forms",
+        path: "/forms/validation-form",
+        name: "ValidationForm",
         component: () =>
-          import(/* webpackChunkName: "views-forms" */ "@/views/Forms")
+          import(
+            /* webpackChunkName: "views-validation-form" */ "@/views/form/ValidationForms"
+          )
+      },
+      {
+        path: "/forms/app-form",
+        name: "AppForm",
+        component: () =>
+          import(
+            /* webpackChunkName: "views-app-form" */ "@/views/form/AppForms"
+          )
       },
       {
         path: "/buttons",

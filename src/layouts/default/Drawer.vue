@@ -28,6 +28,12 @@ export default {
     items: [
       {title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/'},
       {
+        title: 'Forms', icon: 'mdi-form-select', items: [
+          {title: 'Validation-Form', to: '/forms/validation-form'},
+          {title: 'App-Form', to: '/forms/app-form'},
+        ]
+      },
+      {
         title: 'Pages', icon: 'mdi-menu', items: [
           {
             title: 'authentication', icon: 'mdi-login', items: [
@@ -43,7 +49,6 @@ export default {
       {title: 'Break-Points', icon: 'mdi-image', to: '/break-points'},
       {title: 'typo', icon: 'mdi-image', to: '/typo'},
       {title: 'Tables', icon: 'mdi-table-settings', to: '/tables'},
-      {title: 'Forms', icon: 'mdi-form-select', to: '/forms'},
       {title: 'Buttons', icon: 'mdi-gesture-tap-button', to: '/buttons'},
       {title: 'Icons', icon: 'mdi-emoticon-excited-outline', to: '/icons'},
     ],

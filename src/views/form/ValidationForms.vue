@@ -100,24 +100,13 @@
         </validation-observer>
       </v-card-text>
     </v-card>
-    <v-card>
-      <v-card-text>
-        <label>
-          나이
-          <v-text-field
-            class="m-1"
-            outlined
-            dense
-          />
-        </label>
-      </v-card-text>
-    </v-card>
   </v-container>
 </template>
 <script>
 export default {
   name: 'Forms',
   data: () => ({
+    customValue: null,
     name: null,
     phoneNumber: null,
     email: null,
