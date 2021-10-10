@@ -1,20 +1,36 @@
 <template>
   <v-container fluid>
-    <v-card>
-      <v-card-title>
-        회원목록
-      </v-card-title>
-      <v-data-table
-        :headers="headers"
-        :items="desserts"
-        :items-per-page="5"
-        class="elevation-1"
-      />
-    </v-card>
+    <app-data-table
+      title="회원목록1"
+      :headers="headers"
+      :items="desserts"
+      :items-per-page="5"
+    >
+      <div slot="top">
+        Hello world !!
+      </div>
+    </app-data-table>
+    <app-data-table
+      title="회원목록2"
+      :headers="headers"
+      :items="desserts"
+      :items-per-page="5"
+    />
+    <app-data-table
+      title="회원목록3"
+      :headers="headers"
+      :items="desserts"
+      :items-per-page="5"
+    />
   </v-container>
 </template>
 <script>
+import AppDataTable from '@/components/app/DataTable'
+
 export default {
+  components : {
+    AppDataTable
+  },
   data() {
     return {
       headers: [

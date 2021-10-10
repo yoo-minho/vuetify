@@ -6,7 +6,17 @@
     <v-data-table
       v-bind="$attrs"
       v-on="$listeners"
-    />
+    >
+      <template
+        v-for="{slot, name} in $scopedSlots"
+        v-slot:[name]="item"
+      >
+        <slot
+          :name="name"
+          v-bind="item"
+        />
+      </template>
+    </v-data-table>
   </v-card>
 </template>
 <script>
